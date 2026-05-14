@@ -122,3 +122,13 @@ button:disabled { opacity: 0.7; cursor: not-allowed; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .hidden { display: none; }
+
+        #icon-pfp {
+            width: 80px;            /* Ukuran lebar gambar */
+            height: 80px;           /* Ukuran tinggi gambar (harus sama dengan lebar agar bulat sempurna) */
+            border-radius: 50%;     /* Membuat gambar menjadi bulat */
+            object-fit: cover;      /* Memastikan gambar terpotong rapi tanpa gepeng */
+            margin-bottom: 15px;    /* Jarak antara gambar dan teks di bawahnya */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Opsional: memberikan sedikit bayangan */
+            border: 2px solid #fff; /* Opsional: bingkai putih */
+        }
