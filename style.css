@@ -126,7 +126,7 @@ button:disabled { opacity: 0.7; cursor: not-allowed; }
         #icon-pfp {
             width: 80px;            /* Ukuran lebar gambar */
             height: 80px;           /* Ukuran tinggi gambar (harus sama dengan lebar agar bulat sempurna) */
-            border-radius: 50%;     /* Membuat gambar menjadi bulat */
+            border-radius: 15%;     /* Membuat gambar menjadi bulat */
             object-fit: cover;      /* Memastikan gambar terpotong rapi tanpa gepeng */
             margin-bottom: 15px;    /* Jarak antara gambar dan teks di bawahnya */
             box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Opsional: memberikan sedikit bayangan */
