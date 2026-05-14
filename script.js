@@ -8,8 +8,8 @@ convertBtn.addEventListener('click', async () => {
     const url = urlInput.value.trim();
 
     // Regex untuk validasi URL TikTok yang lebih ketat
-    // Mencocokkan format umum video TikTok (tiktok.com/@user/video/id atau vm.tiktok.com/id)
-    const tiktokUrlRegex = /^(https?:\/\/(?:www\.|vm\.|m\.)?tiktok\.com\/(?:@[\w.]+\/video\/(\d+)|v\/(\d+)|[a-zA-Z0-9]+))\/?.*$/;
+    // Mencocokkan format umum video TikTok (tiktok.com/@user/video/id, vm.tiktok.com/id, atau vt.tiktok.com/id)
+    const tiktokUrlRegex = /^(https?:\/\/(?:www\.|vm\.|m\.|vt\.)?tiktok\.com\/(?:@[\w.]+\/video\/(\d+)|v\/(\d+)|[a-zA-Z0-9]+))\/?.*$/;
     if (!url || !tiktokUrlRegex.test(url)) {
         alert('Mohon masukkan tautan video TikTok yang valid (contoh: https://www.tiktok.com/@user/video/...)!');
         return;
