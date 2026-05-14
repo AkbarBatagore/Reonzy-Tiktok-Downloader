@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Downloader HD - No Watermark</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <i class="fab fa-tiktok logo"></i>
+            <h1>TikTok Downloader</h1>
+            <p>Unduh video tanpa watermark kualitas HD</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="input-wrapper">
+                <i class="fas fa-link"></i>
+                <input type="text" id="tiktokUrl" placeholder="Tempel tautan video di sini...">
+            </div>
+            <button id="convertBtn">
+                <span id="btnText">Convert</span>
+                <div id="spinner" class="spinner hidden"></div>
+            </button>
+        </div>
+
+        <div id="resultCard" class="result-card hidden">
+            <div class="preview-container">
+                <img id="videoThumb" src="" alt="Thumbnail">
+            </div>
+            <div class="info-container">
+                <h3 id="videoTitle"></h3>
+                <a id="downloadBtn" href="#" target="_blank" class="download-link"><i class="fas fa-download"></i> Download MP4 (HD)</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
