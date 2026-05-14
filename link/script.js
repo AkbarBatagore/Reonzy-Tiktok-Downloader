@@ -4,6 +4,9 @@ const resultCard = document.getElementById('resultCard');
 const spinner = document.getElementById('spinner');
 const btnText = document.getElementById('btnText');
 
+const directDlBtn = document.getElementById('directDlBtn');
+let currentVideoUrl = '';
+
 convertBtn.addEventListener('click', async () => {
     const url = urlInput.value.trim();
 
@@ -25,11 +28,14 @@ convertBtn.addEventListener('click', async () => {
             const video = result.data;
             
             document.getElementById('videoThumb').src = video.cover;
-            document.getElementById('videoTitle').innerText = video.title || 'Video Tanpa Judul';
+            const title = video.title || 'Video Tanpa Judul';
+            document.getElementById('videoTitle').innerText = title;
             
             const dlBtn = document.getElementById('downloadBtn');
             // 'play' adalah video tanpa watermark, 'hdplay' adalah kualitas HD
-            dlBtn.href = video.hdplay || video.play;
+            const videoUrl = video.hdplay || video.play;
+            dlBtn.href = videoUrl;
+            currentVideoUrl = videoUrl;
             
             resultCard.classList.remove('hidden');
         } else {
@@ -38,6 +44,26 @@ convertBtn.addEventListener('click', async () => {
     } catch (error) {
         console.error(error);
         alert('Terjadi kesalahan: ' + error.message);
+    } finally {
+        setLoading(false);
+    }
+});
+
+directDlBtn.addEventListener('click', async () => {
+    if (!currentVideoUrl) return;
+
+    setLoading(true);
+    try {
+        const response = await fetch(currentVideoUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `tiktok_reonzy_${Date.now()}.mp4`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+    } catch (error) {
+        alert('Gagal download langsung: ' + error.message);
     } finally {
         setLoading(false);
     }
